@@ -8,7 +8,7 @@ setup(
     description="Toolkit for math calculations.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/Matvei-Antipov/fastmath-0.1.0.git",
+    url="https://github.com/Matvei-Antipov/mathhunt-0.1.0.git",
     packages=find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",

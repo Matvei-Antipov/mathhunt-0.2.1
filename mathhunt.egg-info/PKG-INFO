@@ -2,11 +2,12 @@ Metadata-Version: 2.1
 Name: mathhunt
 Version: 0.1.0
 Summary: Toolkit for math calculations.
-Home-page: https://github.com/Matvei-Antipov/fastmath-0.1.0.git
+Home-page: https://github.com/Matvei-Antipov/mathhunt-0.1.0.git
 Author: Matvei Antipov
-Author-email: matveiantipov2007@gmail.com
-License: UNKNOWN
-Platform: UNKNOWN
+Author-email: Matvei Antipov <matveiantipov2007@gmail.com>
+License: MIT
+Project-URL: Source Code, https://github.com/Matvei-Antipov/mathhunt
+Keywords: math,calculations
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
@@ -16,7 +17,7 @@ License-File: LICENSE
 
 # mathhunt Library
 
-mathhunt is a lightweight Python library designed for quick and efficient mathematical computations. It provides functions for calculating the volume and area of various geometric shapes, as well as distances between points in a Cartesian coordinate system.
+FastMath is a lightweight Python library designed for quick and efficient mathematical computations. It provides functions for calculating the volume and area of various geometric shapes, as well as distances between points in a Cartesian coordinate system.
 
 ## Table of Contents
 
@@ -227,7 +228,7 @@ TypeError: If any of the arguments are not numeric, or if type or dimension are 
 ValueError: If the type or dimension is invalid.
 Example Usage
 python
-РљРѕРїС–СЋРІР°С‚Рё РєРѕРґ
+Копіювати код
 # Calculate distance between two points in 2D
 dist = distance(0, 0, 3, 4, type='dist_points', dimension='2d')  # Output: 5.0
 
@@ -244,7 +245,7 @@ Raises
 TypeError: If the radius is not a number.
 Example Usage
 python
-РљРѕРїС–СЋРІР°С‚Рё РєРѕРґ
+Копіювати код
 # Calculate the circumference of a circle with radius 5
 circ = circumference(5)  # Output: 31.400000000000002
 
@@ -262,7 +263,7 @@ ValueError: If the angle is out of the valid range.
 
 **Example of usage**
 
-"""Calculate the length of an arc with radius 10 and angle ПЂ/2"""
+"""Calculate the length of an arc with radius 10 and angle π/2"""
 arc = arc_length(10, 1.5708)  # Output: 15.707999999999998
 
 **Function: vector_length**
@@ -287,4 +288,3 @@ vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0
 
 - - ## mathematical-function
 - - - Docs for that module will be soon.
-

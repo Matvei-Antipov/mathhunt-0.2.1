@@ -15,3 +15,4 @@ mathhunt/geometry/distances.py
 mathhunt/geometry/shapes.py
 mathhunt/logic/__init__.py
 mathhunt/logic/logic.py
+tests/test_core.py
