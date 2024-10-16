@@ -16,10 +16,10 @@ def volume(*args: float, type: str) -> float:
         ValueError: If the shape type is invalid, arguments are incorrect, or metrics are non-positive.
     """
     if not all(isinstance(arg, (int, float)) for arg in args):
-        raise TypeError("[fastmath] : [shapes] : Input error! All metrics must be numbers!")
+        raise TypeError("[mathhunt] : [shapes] : Input error! All metrics must be numbers!")
     
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [shapes] : Input error! Type must be a string!")
+        raise TypeError("[mathhunt] : [shapes] : Input error! Type must be a string!")
 
     expected_args: dict[str, Tuple[int, str]] = {
         "parallelepiped": (3, "length, width, height"),
@@ -34,15 +34,15 @@ def volume(*args: float, type: str) -> float:
     }
 
     if type not in expected_args:
-        raise ValueError(f"[fastmath] : [shapes] : Invalid type! Must be one of: {', '.join(expected_args)}")
+        raise ValueError(f"[mathhunt] : [shapes] : Invalid type! Must be one of: {', '.join(expected_args)}")
     
     expected_arg_count, arg_names = expected_args[type]
 
     if len(args) != expected_arg_count:
-        raise ValueError(f"[fastmath] : [shapes] : {type.capitalize()} requires {expected_arg_count} argument(s): {arg_names}")
+        raise ValueError(f"[mathhunt] : [shapes] : {type.capitalize()} requires {expected_arg_count} argument(s): {arg_names}")
 
     if any(arg <= 0 for arg in args):
-        raise ValueError("[fastmath] : [shapes] : Metrics must be > 0!")
+        raise ValueError("[mathhunt] : [shapes] : Metrics must be > 0!")
 
     if type == "parallelepiped":
         return args[0] * args[1] * args[2]
@@ -79,10 +79,10 @@ def square(*args: float, type: str) -> float:
         ValueError: If the shape type is invalid, arguments are incorrect, or metrics are non-positive.
     """
     if not all(isinstance(arg, (int, float)) for arg in args):
-        raise TypeError("[fastmath] : [shapes] : Input error! All metrics must be numbers!")
+        raise TypeError("[mathhunt] : [shapes] : Input error! All metrics must be numbers!")
     
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [shapes] : Input error! Type must be a string!")
+        raise TypeError("[mathhunt] : [shapes] : Input error! Type must be a string!")
     
     expected_args: dict[str, Tuple[int, str]] = {
         "quadrate": (1, "side"),
@@ -100,15 +100,15 @@ def square(*args: float, type: str) -> float:
     }
 
     if type not in expected_args:
-        raise ValueError(f"[fastmath] : [shapes] : Invalid type! Must be one of: {', '.join(expected_args)}")
+        raise ValueError(f"[mathhunt] : [shapes] : Invalid type! Must be one of: {', '.join(expected_args)}")
     
     expected_arg_count, arg_names = expected_args[type]
 
     if len(args) != expected_arg_count:
-        raise ValueError(f"[fastmath] : [shapes] : {type.capitalize()} requires {expected_arg_count} argument(s): {arg_names}")
+        raise ValueError(f"[mathhunt] : [shapes] : {type.capitalize()} requires {expected_arg_count} argument(s): {arg_names}")
 
     if any(arg <= 0 for arg in args):
-        raise ValueError("[fastmath] : [shapes] : Metrics must be > 0!")
+        raise ValueError("[mathhunt] : [shapes] : Metrics must be > 0!")
     
     if type == "quadrate":
         return args[0] ** 2

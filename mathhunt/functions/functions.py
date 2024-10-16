@@ -3,7 +3,7 @@ import os
 
 def _load_bradys_table(filename='__data/bradis_table.json'):
 
-    if __name__ != 'fastmath.functions.functions':
+    if __name__ != 'mathhunt.functions.functions':
         raise ImportError("This function cannot be imported outside this module")
 
     filepath = os.path.join(os.path.dirname(__file__), '../', filename)
@@ -27,7 +27,7 @@ def linear_function(a: float, x: float, b: float) -> float:
         float: The result of the linear function ax + b.
     """
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     return (a * x) + b
 
@@ -49,10 +49,10 @@ def quadratic_function(a: float, x: float, b: float, c: float) -> float:
         float: The result of the quadratic function ax^2 + bx + c.
     """
     if not isinstance(a, (int, float)) or not isinstance(b, (int, float)) or not isinstance(c, (int, float)) or not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     if a == 0:
-        raise ValueError("[fastmath] : [functions] : If A is 0 that's a linear function")
+        raise ValueError("[mathhunt] : [functions] : If A is 0 that's a linear function")
     
     return (a * (x ** 2)) + (b * x) + c
     
@@ -71,7 +71,7 @@ def power_function(x: float, n: float) -> float:
         float: The result of x raised to the power of n (x^n).
     """
     if not isinstance(x, (int, float)) or not isinstance(n, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     return x ** n
     
@@ -91,10 +91,10 @@ def root_function(x: float, n: float) -> float:
         float: The nth root of x (x^(1/n)).
     """
     if not isinstance(x, (int, float)) or not isinstance(n, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     if x < 0:
-        raise ValueError("[fastmath] : [functions] : Input error! Result is NaN")
+        raise ValueError("[mathhunt] : [functions] : Input error! Result is NaN")
 
     return x ** (1 / n)
     
@@ -114,10 +114,10 @@ def pointer_function(x: float, a: float) -> float:
         float: The result of a raised to the power of x (a^x).
     """
     if not isinstance(x, (int, float)) or not isinstance(a, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     if a == 0:
-        raise ValueError("[fastmath] : [functions] : Input error! Function is unstable, a must not be equal to 0")
+        raise ValueError("[mathhunt] : [functions] : Input error! Function is unstable, a must not be equal to 0")
     
     return a ** x
     
@@ -137,13 +137,13 @@ def logarithm_function(a: float, x: float) -> float:
         float: The logarithm of x to the base a.
     """
     if not isinstance(x, (int, float)) or not isinstance(a, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
     
     if a <= 0 or a == 1:
-        raise ValueError("[fastmath] : [functions] : Base 'a' must be greater than 0 and not equal to 1")
+        raise ValueError("[mathhunt] : [functions] : Base 'a' must be greater than 0 and not equal to 1")
     
     if x <= 0:
-        raise ValueError("[fastmath] : [functions] : Argument 'x' must be greater than 0")
+        raise ValueError("[mathhunt] : [functions] : Argument 'x' must be greater than 0")
     
     if x == 1:
         return 0.0
@@ -179,7 +179,7 @@ def absolut_function(x: float) -> float:
         float: The absolute value of x.
     """
     if not isinstance(x, float):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers (int or float)")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers (int or float)")
 
     if x < 0:
         return -x
@@ -201,14 +201,14 @@ def sinus(x: float, type: str) -> float:
         float: The sine of the angle.
     """
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [functions] : Input error! Type must be a string")
+        raise TypeError("[mathhunt] : [functions] : Input error! Type must be a string")
 
     if type == "deg" and not (-360 <= x <= 360):
-        raise ValueError("[fastmath] : [functions] : Angle in degrees must be in the range [-360, 360]")
+        raise ValueError("[mathhunt] : [functions] : Angle in degrees must be in the range [-360, 360]")
     if type == "rad" and not (-6.2832 <= x <= 6.2832):
-        raise ValueError("[fastmath] : [functions] : Angle in radians must be in the range [-2π, 2π]")
+        raise ValueError("[mathhunt] : [functions] : Angle in radians must be in the range [-2π, 2π]")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
@@ -221,7 +221,7 @@ def sinus(x: float, type: str) -> float:
         key = str(int(x))
         if key in angles:
             return angles[key]['sin']
-    raise ValueError(f"[fastmath] : [functions] : Angle {x} not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : Angle {x} not found in Bradis table")
 
 def cosinus(x: float, type: str) -> float:
     """
@@ -239,14 +239,14 @@ def cosinus(x: float, type: str) -> float:
         float: The cosine of the angle.
     """
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [functions] : Input error! Type must be a string")
+        raise TypeError("[mathhunt] : [functions] : Input error! Type must be a string")
 
     if type == "deg" and not (-360 <= x <= 360):
-        raise ValueError("[fastmath] : [functions] : Angle in degrees must be in the range [-360, 360]")
+        raise ValueError("[mathhunt] : [functions] : Angle in degrees must be in the range [-360, 360]")
     if type == "rad" and not (-6.2832 <= x <= 6.2832):
-        raise ValueError("[fastmath] : [functions] : Angle in radians must be in the range [-2π, 2π]")
+        raise ValueError("[mathhunt] : [functions] : Angle in radians must be in the range [-2π, 2π]")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
@@ -259,7 +259,7 @@ def cosinus(x: float, type: str) -> float:
         key = str(int(x))
         if key in angles:
             return angles[key]['cos']
-    raise ValueError(f"[fastmath] : [functions] : Angle {x} not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : Angle {x} not found in Bradis table")
 
 def tangens(x: float, type: str) -> float:
     """
@@ -277,14 +277,14 @@ def tangens(x: float, type: str) -> float:
         float: The tangent of the angle.
     """
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [functions] : Input error! Type must be a string")
+        raise TypeError("[mathhunt] : [functions] : Input error! Type must be a string")
 
     if type == "deg" and not (-360 <= x <= 360):
-        raise ValueError("[fastmath] : [functions] : Angle in degrees must be in the range [-360, 360]")
+        raise ValueError("[mathhunt] : [functions] : Angle in degrees must be in the range [-360, 360]")
     if type == "rad" and not (-6.2832 <= x <= 6.2832):
-        raise ValueError("[fastmath] : [functions] : Angle in radians must be in the range [-2π, 2π]")
+        raise ValueError("[mathhunt] : [functions] : Angle in radians must be in the range [-2π, 2π]")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
@@ -297,7 +297,7 @@ def tangens(x: float, type: str) -> float:
         key = str(int(x))
         if key in angles:
             return angles[key]['tan']
-    raise ValueError(f"[fastmath] : [functions] : Angle {x} not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : Angle {x} not found in Bradis table")
 
 def cotangens(x: float, type: str) -> float:
     """
@@ -309,20 +309,20 @@ def cotangens(x: float, type: str) -> float:
 
     Raises:
         TypeError: If x is not a number or type is not a string.
-        ValueError: If x is outside the valid range for the specified type or cotangent is undefined.
+        ValueError: If x is outside the valid range for the specified type or not found in the Bradis table.
 
     Returns:
         float: The cotangent of the angle.
     """
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [functions] : Input error! Type must be a string")
+        raise TypeError("[mathhunt] : [functions] : Input error! Type must be a string")
 
     if type == "deg" and not (-360 <= x <= 360):
-        raise ValueError("[fastmath] : [functions] : Angle in degrees must be in the range [-360, 360]")
+        raise ValueError("[mathhunt] : [functions] : Angle in degrees must be in the range [-360, 360]")
     if type == "rad" and not (-6.2832 <= x <= 6.2832):
-        raise ValueError("[fastmath] : [functions] : Angle in radians must be in the range [-2π, 2π]")
+        raise ValueError("[mathhunt] : [functions] : Angle in radians must be in the range [-2π, 2π]")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
@@ -330,102 +330,81 @@ def cotangens(x: float, type: str) -> float:
     if type == "rad":
         for value in angles.values():
             if abs(value['radian'] - x) < 1e-4:
-                tan_value = value['tan']
-                if tan_value == "undefined" or float(tan_value) == 0:
-                    raise ValueError(f"[fastmath] : [functions] : Cotangent is undefined for angle {x}")
-                return 1 / float(tan_value)
+                return 1 / value['tan']
     elif type == "deg":
         key = str(int(x))
         if key in angles:
-            tan_value = angles[key]['tan']
-            if tan_value == "undefined" or float(tan_value) == 0:
-                raise ValueError(f"[fastmath] : [functions] : Cotangent is undefined for angle {x}")
-            return 1 / float(tan_value)
-    raise ValueError(f"[fastmath] : [functions] : Angle {x} not found in Bradis table")
+            return 1 / angles[key]['tan']
+    raise ValueError(f"[mathhunt] : [functions] : Angle {x} not found in Bradis table")
 
 def arcsin(x: float) -> float:
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
     for key, value in angles.items():
         if value.get("sin") == x:
             return float(key)
-    raise ValueError(f"[fastmath] : [functions] : arcsin({x}) not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : arcsin({x}) not found in Bradis table")
 
 def arccos(x: float) -> float:
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
     for key, value in angles.items():
         if value.get("cos") == x:
             return float(key)
-    raise ValueError(f"[fastmath] : [functions] : arccos({x}) not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : arccos({x}) not found in Bradis table")
 
 def arctan(x: float) -> float:
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
     for key, value in angles.items():
         if value.get("tan") == x:
             return float(key)
-    raise ValueError(f"[fastmath] : [functions] : arctan({x}) not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : arctan({x}) not found in Bradis table")
 
 def arccot(x: float) -> float:
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be an integer or float")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be an integer or float")
 
     table = _load_bradys_table()
     angles = table.get("angles", {})
     for key, value in angles.items():
         if value.get("tan") == 1 / x:
             return float(key)
-    raise ValueError(f"[fastmath] : [functions] : arccot({x}) not found in Bradis table")
+    raise ValueError(f"[mathhunt] : [functions] : arccot({x}) not found in Bradis table")
 
 def exponential_function(x: float) -> float:
-
     if not isinstance(x, float):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be a number")
-    
-    else:
-        return 2.71828 ** x
-    
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be a number")
+    return 2.71828 ** x
+
 def sinh(x: float) -> float:
-
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be a number")
-    
-    else:
-        return ((2.71828 ** x) - (2.71828 ** -(x))) / 2
-    
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be a number")
+    return ((2.71828 ** x) - (2.71828 ** -(x))) / 2
+
 def cosh(x: float) -> float:
-
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be a number")
-    
-    else:
-        return ((2.71828 ** x) + (2.71828 ** -(x))) / 2
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be a number")
+    return ((2.71828 ** x) + (2.71828 ** -(x))) / 2
 
 def tanh(x: float) -> float:
-
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be a number")
-    
-    else:
-        return ((2.71828 ** x) - (2.71828 ** -(x))) / ((2.71828 ** x) + (2.71828 ** -(x)))
-    
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be a number")
+    return ((2.71828 ** x) - (2.71828 ** -(x))) / ((2.71828 ** x) + (2.71828 ** -(x)))
+
 def coth(x: float) -> float:
-
     if not isinstance(x, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be a number")
-    
-    else:
-        return ((2.71828 ** x) + (2.71828 ** -(x))) / ((2.71828 ** x) - (2.71828 ** -(x)))
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be a number")
+    return ((2.71828 ** x) + (2.71828 ** -(x))) / ((2.71828 ** x) - (2.71828 ** -(x)))
 
 def sigma(i: int, n: int, equation: float = 0.0) -> float:
     """
@@ -440,10 +419,10 @@ def sigma(i: int, n: int, equation: float = 0.0) -> float:
     float: The total sum.
     """
     if not all(isinstance(arg, int) for arg in (i, n)) or not isinstance(equation, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers.")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers.")
     
     if n < i:
-        raise ValueError("[fastmath] : [functions] : Ending index (n) must be greater than or equal to starting index (i).")
+        raise ValueError("[mathhunt] : [functions] : Ending index (n) must be greater than or equal to starting index (i).")
 
     total_sum = equation
 
@@ -451,7 +430,6 @@ def sigma(i: int, n: int, equation: float = 0.0) -> float:
         total_sum += j
 
     return total_sum
-
 
 def sigma_p(i: int, n: int, equation: float = 1.0) -> float:
     """
@@ -466,10 +444,10 @@ def sigma_p(i: int, n: int, equation: float = 1.0) -> float:
     float: The total product.
     """
     if not all(isinstance(arg, int) for arg in (i, n)) or not isinstance(equation, (int, float)):
-        raise TypeError("[fastmath] : [functions] : Input error! Arguments must be numbers.")
+        raise TypeError("[mathhunt] : [functions] : Input error! Arguments must be numbers.")
     
     if n < i:
-        raise ValueError("[fastmath] : [functions] : Ending index (n) must be greater than or equal to starting index (i).")
+        raise ValueError("[mathhunt] : [functions] : Ending index (n) must be greater than or equal to starting index (i).")
 
     total_product = equation
 

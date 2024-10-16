@@ -15,11 +15,11 @@ def distance(*args: float, type: str, dimension: str) -> float:
         ValueError: If the type or dimension is invalid.
     """
     if not all(isinstance(arg, (int, float)) for arg in args):
-        raise TypeError("[fastmath] : [distances] : Input error! Arguments must be numbers!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Arguments must be numbers!")
     if not isinstance(type, str):
-        raise TypeError("[fastmath] : [distances] : Input error! Type must be a string!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Type must be a string!")
     if not isinstance(dimension, str):
-        raise TypeError("[fastmath] : [distances] : Input error! Dimension must be a string!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Dimension must be a string!")
 
     valid_types = [
         "dist_points", "dist_point_line", "dist_point_plane", "dist_par_lines",
@@ -28,9 +28,9 @@ def distance(*args: float, type: str, dimension: str) -> float:
     valid_dimensions = ["2d", "3d", "euclid"]
 
     if dimension not in valid_dimensions:
-        raise ValueError("[fastmath] : [distances] : Dimension must be one of: " + ", ".join(valid_dimensions))
+        raise ValueError("[mathhunt] : [distances] : Dimension must be one of: " + ", ".join(valid_dimensions))
     if type not in valid_types:
-        raise ValueError("[fastmath] : [distances] : Type must be one of: " + ", ".join(valid_types))
+        raise ValueError("[mathhunt] : [distances] : Type must be one of: " + ", ".join(valid_types))
 
     if type == "dist_points":
         if dimension == "2d":
@@ -62,7 +62,7 @@ def distance(*args: float, type: str, dimension: str) -> float:
         elif dimension == "3d":
             return max(abs(args[3] - args[0]), abs(args[4] - args[1]), abs(args[5] - args[2]))
 
-    raise ValueError("[fastmath] : [distances] : Unexpected error in calculations.")
+    raise ValueError("[mathhunt] : [distances] : Unexpected error in calculations.")
 
 
 def circumference(r: float) -> float:
@@ -79,7 +79,7 @@ def circumference(r: float) -> float:
         TypeError: If the radius is not a number.
     """
     if not isinstance(r, (int, float)):
-        raise TypeError("[fastmath] : [distances] : Input error! Radius must be a number!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Radius must be a number!")
     return 2 * 3.14 * r
 
 
@@ -99,11 +99,11 @@ def arc_length(r: float, rad: float) -> float:
         ValueError: If the angle is out of the valid range.
     """
     if not isinstance(r, (int, float)):
-        raise TypeError("[fastmath] : [distances] : Input error! Radius must be a number!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Radius must be a number!")
     if not isinstance(rad, (int, float)):
-        raise TypeError("[fastmath] : [distances] : Input error! Angle must be a number!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Angle must be a number!")
     if not (-6.2832 <= rad <= 6.2832):
-        raise ValueError("[fastmath] : [distances] : Angle must be in the range [-2π, 2π]")
+        raise ValueError("[mathhunt] : [distances] : Angle must be in the range [-2π, 2π]")
     return r * rad
 
 
@@ -123,13 +123,13 @@ def vector_length(*args: float, dimension: str) -> float:
         ValueError: If the dimension is invalid.
     """
     if not all(isinstance(arg, (int, float)) for arg in args):
-        raise TypeError("[fastmath] : [distances] : Input error! Arguments must be numbers!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Arguments must be numbers!")
     if not isinstance(dimension, str):
-        raise TypeError("[fastmath] : [distances] : Input error! Dimension must be a string!")
+        raise TypeError("[mathhunt] : [distances] : Input error! Dimension must be a string!")
 
     if dimension == "2d":
         return (args[0] ** 2 + args[1] ** 2) ** 0.5
     elif dimension == "3d":
         return (args[0] ** 2 + args[1] ** 2 + args[2] ** 2) ** 0.5
     else:
-        raise ValueError("[fastmath] : [distances] : Dimension must be '2d' or '3d'")
+        raise ValueError("[mathhunt] : [distances] : Dimension must be '2d' or '3d'")
