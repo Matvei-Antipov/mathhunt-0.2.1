@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name="fastmath",
+    name="mathhunt",
     version="0.1.0",
     author="Matvei Antipov",
     author_email="matveiantipov2007@gmail.com",
