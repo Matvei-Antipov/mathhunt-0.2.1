@@ -2,3 +2,5 @@ build/
 dist/
 pycache/
 tests/
+__pycache__/
+MANIFEST.in

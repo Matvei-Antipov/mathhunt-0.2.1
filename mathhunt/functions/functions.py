@@ -1,7 +1,7 @@
 import json
 import os
 
-def _load_bradys_table(filename='__data/bradis_table.json'):
+def _load_bradys_table(filename='__data\\bradis_table.json'):
 
     if __name__ != 'mathhunt.functions.functions':
         raise ImportError("This function cannot be imported outside this module")
