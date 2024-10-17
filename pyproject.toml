@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "mathhunt"
-version = "0.1.1"
+version = "0.2.0"
 description = "Toolkit for math calculations."
 readme = "README.md"  # Это заменяет long-description
 license = { text = "MIT" }
