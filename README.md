@@ -93,7 +93,7 @@ volume_invalid = volume(2, 3, type='invalid_shape')
 ```
 Raises ValueError
 
-##Area-calculation
+## Area-calculation
 - The square function calculates the area of various 2D shapes based on the specified shape type and corresponding metrics. This function is designed to handle multiple geometric shapes and includes robust input validation for accurate area calculations.
 
 **Parameters**
@@ -267,5 +267,6 @@ vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0
 ```
 
 
--##Mathematical-function
+## Mathematical-function
+
 
