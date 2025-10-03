@@ -44,9 +44,15 @@ Here you can see 2 arguments
 - The volume function calculates the volume of various 3D shapes  based on the provided shape type and corresponding metrics. It supports multiple geometric shapes and ensures input validation for accurate calculations.
 
 **Parameters**
-```*args (float)```: A variable-length argument list representing the necessary metrics for the specified shape (e.g., radius, height, side length). The number of arguments required depends on the shape type.
+```python
+args (float)
+```
+: A variable-length argument list representing the necessary metrics for the specified shape (e.g., radius, height, side length). The number of arguments required depends on the shape type.
 
-```type (str)```: A string that specifies the type of shape for which the volume is to be calculated. Supported types include:
+```python
+type (str)
+```
+: A string that specifies the type of shape for which the volume is to be calculated. Supported types include:
 
 'parallelepiped'
 'cube'
@@ -82,16 +88,24 @@ volume_cylinder = volume(2, 5, type='cylinder')  # Returns: 25.12
 volume_sphere = volume(4, type='sphere')  # Returns: 268.08
 
 > Invalid usage example
-```volume_invalid = volume(2, 3, type='invalid_shape')```
+```python
+volume_invalid = volume(2, 3, type='invalid_shape')
+```
 Raises ValueError
 
 ##Area-calculation
 - The square function calculates the area of various 2D shapes based on the specified shape type and corresponding metrics. This function is designed to handle multiple geometric shapes and includes robust input validation for accurate area calculations.
 
 **Parameters**
-```*args (float):``` A variable-length argument list that represents the necessary metrics for the specified shape (e.g., side lengths, radius). The number of arguments required varies depending on the shape type.
+```python
+*args (float):
+```
+ A variable-length argument list that represents the necessary metrics for the specified shape (e.g., side lengths, radius). The number of arguments required varies depending on the shape type.
 
-```type (str):``` A string that specifies the type of shape for which the area is to be calculated. Supported types include:
+```python
+type (str):
+```
+ A string that specifies the type of shape for which the area is to be calculated. Supported types include:
 
 'quadrate'
 'rectangle'
@@ -227,3 +241,4 @@ ValueError: If dimension is invalid.
 
 
 -##Mathematical-function
+
