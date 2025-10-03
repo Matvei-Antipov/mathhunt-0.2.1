@@ -45,7 +45,7 @@ Here you can see 2 arguments
 
 **Parameters**
 ```python
-args (float)
+*args (float)
 ```
 : A variable-length argument list representing the necessary metrics for the specified shape (e.g., radius, height, side length). The number of arguments required depends on the shape type.
 
@@ -155,8 +155,14 @@ This will raise ValueError
 Calculates various types of distances based on the specified type and dimension.
 
 **Parameters**
-```*args (float):``` Coordinates or parameters required for distance calculation.
-```type (str):``` The type of distance to calculate. Supported types include:
+```python
+*args (float):
+```
+Coordinates or parameters required for distance calculation.
+```python
+type (str):
+```
+ The type of distance to calculate. Supported types include:
 'dist_points'
 'dist_point_line'
 'dist_point_plane'
@@ -188,7 +194,10 @@ manhattan_dist = distance(1, 2, 3, 4, 5, 6, type='dist_manhattan', dimension='3d
 Calculates the circumference of a circle.
 
 Parameters
-```r (float):``` The radius of the circle.
+```python
+r (float):
+```
+The radius of the circle.
 Returns
 float: The calculated circumference of the circle.
 Raises
@@ -200,14 +209,20 @@ TypeError: If the radius is not a number.
 circ = circumference(5)  # Output: 31.400000000000002
 
 
-Here's an explanation for the distance, circumference, ```arc_length```, and ```vector_length``` functions from your Mathhunt library. This documentation will help users understand the purpose, parameters, return values, and potential exceptions raised by each function.
+Here's an explanation for the distance, circumference, **arc_length**, and **vector_length** functions from your Mathhunt library. This documentation will help users understand the purpose, parameters, return values, and potential exceptions raised by each function.
 
  -**Function: arc_length**
 Calculates the length of an arc of a circle.
 
 Parameters
-```r (float):``` The radius of the circle.
-```rad (float):``` The angle in radians.
+```python
+r (float):
+```
+ The radius of the circle.
+```python
+rad (float):
+```
+ The angle in radians.
 Returns
 float: The calculated arc length.
 Raises
@@ -217,14 +232,22 @@ ValueError: If the angle is out of the valid range.
 **Example of usage**
 
 > Calculate the length of an arc with radius 10 and angle π/2
-```arc = arc_length(10, 1.5708)  # Output: 15.707999999999998```
+```python
+arc = arc_length(10, 1.5708)  # Output: 15.707999999999998
+```
 
  -**Function: vector_length**
 Calculates the length of a vector.
 
 *Parameters*
-```*args (float):``` The components of the vector.
-```dimension (str):``` The dimension of the vector, either '2d' or '3d'.
+```python
+*args (float):
+```
+ The components of the vector.
+```python
+dimension (str):
+```
+ The dimension of the vector, either '2d' or '3d'.
 **Returns**
 float: The calculated length of the vector.
 **Raises**
@@ -234,11 +257,14 @@ ValueError: If dimension is invalid.
 **Example of usage**
 
 > Calculate the length of a 2D vector (3, 4)
-```vec_length_2d = vector_length(3, 4, dimension='2d')  # Output: 5.0```
+```python
+vec_length_2d = vector_length(3, 4, dimension='2d')  # Output: 5.0
+```
 
 > Calculate the length of a 3D vector (1, 2, 2)
-```vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0```
+```python
+vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0
+```
 
 
 -##Mathematical-function
-
