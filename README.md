@@ -31,7 +31,8 @@ You should import module that you need to use from fastmath
 
 For example you need to use sinus function. You should situate 
 
-```from mathhunt import functions
+```python
+from mathhunt import functions
 
 print(functions.sinus(45, "deg"))```
 
