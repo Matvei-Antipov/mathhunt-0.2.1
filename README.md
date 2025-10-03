@@ -268,5 +268,279 @@ vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0
 
 
 ## Mathematical-function
+## Linear and Quadratic Functions
 
+### `linear_function(a: float, x: float, b: float) -> float`  
+Calculates the value of a linear function **ax + b**.  
 
+**Arguments**:  
+- `a` *(float)* – coefficient of x  
+- `x` *(float)* – input variable  
+- `b` *(float)* – constant term  
+
+**Returns**:  
+- *(float)* – result of `ax + b`  
+
+---
+
+### `quadratic_function(a: float, x: float, b: float, c: float) -> float`  
+Calculates the value of a quadratic function **ax² + bx + c**.  
+
+**Arguments**:  
+- `a` *(float)* – coefficient of x²  
+- `x` *(float)* – input variable  
+- `b` *(float)* – coefficient of x  
+- `c` *(float)* – constant term  
+
+**Raises**:  
+- `ValueError` if `a = 0`  
+
+**Returns**:  
+- *(float)* – result of `ax² + bx + c`  
+
+---
+
+## Power and Root Functions
+
+### `power_function(x: float, n: float) -> float`  
+Raises a number `x` to the power of `n`.  
+
+**Arguments**:  
+- `x` *(float)* – base  
+- `n` *(float)* – exponent  
+
+**Returns**:  
+- *(float)* – result of `xⁿ`  
+
+---
+
+### `root_function(x: float, n: float) -> float`  
+Calculates the **n-th root** of a number `x`.  
+
+**Arguments**:  
+- `x` *(float)* – number to extract the root from  
+- `n` *(float)* – degree of the root  
+
+**Raises**:  
+- `ValueError` if `x < 0`  
+
+**Returns**:  
+- *(float)* – result of `x^(1/n)`  
+
+---
+
+### `pointer_function(x: float, a: float) -> float`  
+Calculates **a raised to the power of x**.  
+
+**Arguments**:  
+- `x` *(float)* – exponent  
+- `a` *(float)* – base  
+
+**Returns**:  
+- *(float)* – result of `a^x`  
+
+---
+
+### `logarithm_function(a: float, x: float) -> float`  
+Calculates the logarithm of `x` with base `a`.  
+
+**Arguments**:  
+- `a` *(float)* – base of the logarithm (must be > 0 and != 1)  
+- `x` *(float)* – argument of the logarithm (must be > 0)  
+
+**Returns**:  
+- *(float)* – logₐ(x)  
+
+---
+
+## Absolute Value
+
+### `absolut_function(x: float) -> float`  
+Returns the absolute value of a number.  
+
+**Arguments**:  
+- `x` *(float)* – input number  
+
+**Returns**:  
+- *(float)* – |x|  
+
+---
+
+## Trigonometric Functions (Bradis Table)
+
+### `sinus(x: float, type: str) -> float`  
+Calculates the sine of an angle.  
+
+**Arguments**:  
+- `x` *(float)* – angle  
+- `type` *(str)* – `"deg"` for degrees, `"rad"` for radians  
+
+**Returns**:  
+- *(float)* – sin(x)  
+
+---
+
+### `cosinus(x: float, type: str) -> float`  
+Calculates the cosine of an angle.  
+
+**Arguments**:  
+- `x` *(float)* – angle  
+- `type` *(str)* – `"deg"` or `"rad"`  
+
+**Returns**:  
+- *(float)* – cos(x)  
+
+---
+
+### `tangens(x: float, type: str) -> float`  
+Calculates the tangent of an angle.  
+
+**Arguments**:  
+- `x` *(float)* – angle  
+- `type` *(str)* – `"deg"` or `"rad"`  
+
+**Returns**:  
+- *(float)* – tan(x)  
+
+---
+
+### `cotangens(x: float, type: str) -> float`  
+Calculates the cotangent of an angle.  
+
+**Arguments**:  
+- `x` *(float)* – angle  
+- `type` *(str)* – `"deg"` or `"rad"`  
+
+**Returns**:  
+- *(float)* – cot(x)  
+
+---
+
+## Inverse Trigonometric Functions
+
+### `arcsin(x: float) -> float`  
+Finds the arcsine of `x` using Bradis table.  
+
+**Arguments**:  
+- `x` *(float)* – sine value  
+
+**Returns**:  
+- *(float)* – angle in degrees  
+
+---
+
+### `arccos(x: float) -> float`  
+Finds the arccosine of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – cosine value  
+
+**Returns**:  
+- *(float)* – angle in degrees  
+
+---
+
+### `arctan(x: float) -> float`  
+Finds the arctangent of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – tangent value  
+
+**Returns**:  
+- *(float)* – angle in degrees  
+
+---
+
+### `arccot(x: float) -> float`  
+Finds the arccotangent of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – cotangent value  
+
+**Returns**:  
+- *(float)* – angle in degrees  
+
+---
+
+## Exponential and Hyperbolic Functions
+
+### `exponential_function(x: float) -> float`  
+Calculates **e^x**.  
+
+**Arguments**:  
+- `x` *(float)* – exponent  
+
+**Returns**:  
+- *(float)* – e^x  
+
+---
+
+### `sinh(x: float) -> float`  
+Calculates the hyperbolic sine of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – input value  
+
+**Returns**:  
+- *(float)* – sinh(x)  
+
+---
+
+### `cosh(x: float) -> float`  
+Calculates the hyperbolic cosine of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – input value  
+
+**Returns**:  
+- *(float)* – cosh(x)  
+
+---
+
+### `tanh(x: float) -> float`  
+Calculates the hyperbolic tangent of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – input value  
+
+**Returns**:  
+- *(float)* – tanh(x)  
+
+---
+
+### `coth(x: float) -> float`  
+Calculates the hyperbolic cotangent of `x`.  
+
+**Arguments**:  
+- `x` *(float)* – input value  
+
+**Returns**:  
+- *(float)* – coth(x)  
+
+---
+
+## Summation and Product
+
+### `sigma(i: int, n: int, equation: float = 0.0) -> float`  
+Calculates the sum of integers from `i` to `n`.  
+
+**Arguments**:  
+- `i` *(int)* – start index  
+- `n` *(int)* – end index  
+- `equation` *(float, optional)* – initial value (default `0.0`)  
+
+**Returns**:  
+- *(float)* – total sum  
+
+---
+
+### `sigma_p(i: int, n: int, equation: float = 1.0) -> float`  
+Calculates the product of integers from `i` to `n`.  
+
+**Arguments**:  
+- `i` *(int)* – start index  
+- `n` *(int)* – end index  
+- `equation` *(float, optional)* – initial value (default `1.0`)  
+
+**Returns**:  
+- *(float)* – total product  
