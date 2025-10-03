@@ -1,4 +1,4 @@
-# mathhunt Library
+# Mathhunt Library
 
 Mathhunt is a lightweight Python library designed for quick and efficient mathematical computations. It provides functions for calculating the volume and area of various geometric shapes, as well as distances between points in a Cartesian coordinate system.
 
@@ -582,5 +582,6 @@ Calculates the product of integers from `i` to `n`.
 
 **Returns**:  
 - *(float)* – total product  
+
 
 
