@@ -34,7 +34,8 @@ For example you need to use sinus function. You should situate
 ```python
 from mathhunt import functions
 
-print(functions.sinus(45, "deg"))```
+print(functions.sinus(45, "deg"))
+```
 
 Here you can see 2 arguments
 
@@ -223,5 +224,6 @@ ValueError: If dimension is invalid.
 
 > Calculate the length of a 3D vector (1, 2, 2)
 ```vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0```
+
 
 -##Mathematical-function
