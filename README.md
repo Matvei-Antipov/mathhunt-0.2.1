@@ -8,6 +8,7 @@ Mathhunt is a lightweight Python library designed for quick and efficient mathem
 - [Installation](#installation)
 - [Usage](#usage)
   - [Volume Calculation](#Volume-calculation)
+  - [Square Calculation](#Square-calcilation)
   - [Area Calculation](#Area-calculation)
   - [Distance Calculation](#Distance-calculation)
   - [Mathematical function](#mathematical-function)
@@ -92,6 +93,43 @@ volume_sphere = volume(4, type='sphere')  # Returns: 268.08
 volume_invalid = volume(2, 3, type='invalid_shape')
 ```
 Raises ValueError
+
+## Square-calculation
+### `square(*args: float, type: str) -> float`  
+Calculate the **area of various 2D shapes** (and surface area of a sphere).  
+
+**Arguments**:  
+- `*args` *(float)* – Metrics for the shape, depends on `type`.  
+- `type` *(str)* – Shape type. Supported values:  
+  - `"quadrate"` – requires **1 argument**: side  
+  - `"rectangle"` – requires **2 arguments**: width, height  
+  - `"triangle_h"` – requires **2 arguments**: base, height  
+  - `"triangle_s"` – requires **3 arguments**: side a, side b, side c (Heron’s formula)  
+  - `"circle"` – requires **1 argument**: radius  
+  - `"trapezoid"` – requires **3 arguments**: base a, base b, height  
+  - `"rhombus"` – requires **2 arguments**: diagonal d1, diagonal d2  
+  - `"parallelogram"` – requires **2 arguments**: base, height  
+  - `"sector"` – requires **2 arguments**: angle (deg), radius  
+  - `"ellipse"` – requires **2 arguments**: half-axis a, half-axis b  
+  - `"polygon"` – requires **3 arguments**: n (sides), inscribed circle radius, side length  
+  - `"sphere"` – requires **1 argument**: radius (returns surface area)  
+
+**Returns**:  
+- *(float)* – area of the specified shape  
+
+**Raises**:  
+- `TypeError` – if inputs are not numbers or `type` is not a string  
+- `ValueError` – if shape type is invalid, wrong number of arguments, or non-positive metrics  
+
+**Examples**:  
+```python
+square(5, type="quadrate")        # → 25  
+square(3, 4, type="rectangle")    # → 12  
+square(6, 8, type="triangle_h")   # → 24  
+square(3, type="circle")          # → 28.26  
+square(5, 7, 9, type="triangle_s")# → 15.59 (Heron’s formula)  
+square(10, type="sphere")         # → 1256.0  
+```
 
 ## Area-calculation
 - The square function calculates the area of various 2D shapes based on the specified shape type and corresponding metrics. This function is designed to handle multiple geometric shapes and includes robust input validation for accurate area calculations.
@@ -544,3 +582,4 @@ Calculates the product of integers from `i` to `n`.
 
 **Returns**:  
 - *(float)* – total product  
+
