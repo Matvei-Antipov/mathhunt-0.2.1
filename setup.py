@@ -2,17 +2,16 @@ from setuptools import setup, find_packages
 
 setup(
     name="mathhunt",
-    version="0.2.1",
+    version="0.3.1",
     author="Matvei Antipov",
     author_email="matveiantipov2007@gmail.com",
     description="Toolkit for math calculations.",
-    long_description=open("README.md").read(),
-    long_description_content_type="text/markdown",
+    license="MIT",
     url="https://github.com/Matvei-Antipov/mathhunt-0.1.0.git",
     packages=find_packages(),
     include_package_data=True,
     package_data={
-        '': ['__data/bradis_table.json'],  # Указываем файл
+        '': ['__data/bradis_table.json'],
     },
     classifiers=[
         "Programming Language :: Python :: 3",
