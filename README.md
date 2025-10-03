@@ -39,7 +39,7 @@ print(functions.sinus(45, "deg"))
 
 Here you can see 2 arguments
 
-##Volume-calculation
+## Volume-calculation
 
 - The volume function calculates the volume of various 3D shapes  based on the provided shape type and corresponding metrics. It supports multiple geometric shapes and ensures input validation for accurate calculations.
 
@@ -150,7 +150,7 @@ area_circle = square(2, type='circle')  # Expected output: 12.56
 area_invalid = square(3, type='invalid_shape')  
 This will raise ValueError
 
-##Distance-calculation
+## Distance-calculation
  -**Function: distance**
 Calculates various types of distances based on the specified type and dimension.
 
@@ -268,3 +268,4 @@ vec_length_3d = vector_length(1, 2, 2, dimension='3d')  # Output: 3.0
 
 
 -##Mathematical-function
+
